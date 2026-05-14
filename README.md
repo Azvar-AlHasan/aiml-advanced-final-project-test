@@ -22,7 +22,7 @@ Dalam industri ride-hailing dan taksi modern, transparansi harga adalah kunci un
 
 1. **Clone repository ini**
    ```bash
-   git clone <URL_REPOSITORY_ANDA>
+   git clone https://github.com/Azvar-AlHasan/aiml-advanced-final-project-test.git
    cd AIML-Final-Project
    ```
 
@@ -42,12 +42,3 @@ Dalam industri ride-hailing dan taksi modern, transparansi harga adalah kunci un
    ```bash
    streamlit run app.py
    ```
-
-## Deployment ke Streamlit Community Cloud
-Aplikasi ini sudah siap untuk di-deploy ke Streamlit Community Cloud. 
-1. Push semua file di repositori ini ke GitHub.
-2. Login ke [share.streamlit.io](https://share.streamlit.io/) menggunakan akun GitHub.
-3. Klik **New app**, pilih repository ini, branch `main`, dan set *Main file path* ke `app.py`.
-4. Klik **Deploy!**
-
-> **Catatan Penting:** Pastikan `scikit-learn` version di `requirements.txt` sama persis dengan versi yang digunakan saat men-train `model.joblib` di Google Colab.
