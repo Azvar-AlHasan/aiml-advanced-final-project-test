@@ -7,14 +7,26 @@ import datetime
 # Karena model di-train dengan function kustom ini, kita wajib mendefinisikannya
 # agar model.joblib bisa di-load dengan sukses.
 def bin_time_of_day(hour):
-    if 6 <= hour < 12:
-        return 'morning'
-    elif 12 <= hour < 17:
-        return 'afternoon'
-    elif 17 <= hour < 21:
-        return 'evening'
+    import pandas as pd
+    import numpy as np
+    # Mendukung input berupa pandas Series/DataFrame dari pipeline
+    is_df = isinstance(hour, pd.DataFrame)
+    if is_df:
+        s = hour.iloc[:, 0]
     else:
-        return 'night'
+        s = hour
+        
+    conditions = [
+        (s >= 6) & (s < 12),
+        (s >= 12) & (s < 17),
+        (s >= 17) & (s < 21)
+    ]
+    choices = ['morning', 'afternoon', 'evening']
+    res = np.select(conditions, choices, default='night')
+    
+    if is_df:
+        return pd.DataFrame(res, columns=hour.columns, index=hour.index)
+    return res
 
 # --- LOAD MODEL ---
 @st.cache_resource
