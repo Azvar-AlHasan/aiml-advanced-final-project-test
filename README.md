@@ -6,8 +6,8 @@ Repositori ini berisi Final Project untuk **Weekly Class AI/ML Advanced** dari G
 
 ```text
 AIML-Final-Project/
-├── assets/                  # Untuk menyimpan gambar/logo (opsional)
-├── data/                    # Untuk menyimpan dataset .csv, .xlsx (opsional)
+├── assets/                  # Untuk menyimpan gambar/logo
+├── data/                    # Untuk menyimpan dataset .csv, .xlsx
 ├── app.py                   # File utama aplikasi Streamlit
 ├── model.joblib             # Model Machine Learning yang sudah dilatih
 ├── notebook.ipynb           # Notebook eksperimen (Eksplorasi Data & Training Model)
